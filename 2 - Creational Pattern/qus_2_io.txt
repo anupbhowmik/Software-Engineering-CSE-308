@@ -1,0 +1,32 @@
+Case 1:
+
+input:
+Enter File name with Extension
+myfile.cpp
+
+output:
+Font Set to Monaco
+Parser Set to CPP Parser
+
+
+
+Case 2:
+
+input:
+Enter File name with Extension
+myfile.py
+
+output:
+Font Set to Consolas
+Parser Set to Python Parser
+
+
+Case 3:
+
+input:
+Enter File name with Extension
+18050xx//files//myfile.c
+
+output:
+Font Set to Courier New
+Parser Set to C Parser
