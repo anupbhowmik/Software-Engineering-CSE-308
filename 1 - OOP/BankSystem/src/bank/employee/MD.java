@@ -24,31 +24,35 @@ public class MD extends bank.employee.Employee {
         int choice;
         choice = scanner.nextInt();
         switch (choice) {
-            case 1 -> {
+            case 1: {
                 System.out.print("Enter new interest rate (in %):");
                 Bank.setIntSavings(scanner.nextDouble() * 100);
                 System.out.println("changed successfully");
+                break;
 
             }
-            case 2 -> {
+            case 2: {
                 System.out.print("Enter new interest rate (in %):");
                 Bank.setIntStudent(scanner.nextDouble() * 100);
                 System.out.println("changed successfully");
+                break;
 
             }
-            case 3 -> {
+            case 3: {
                 System.out.print("Enter new interest rate (in %):");
                 Bank.setIntFixedDeposit(scanner.nextDouble() * 100);
                 System.out.println("changed successfully");
+                break;
 
             }
-            case 4 -> {
+            case 4: {
                 System.out.print("Enter new interest rate (in %):");
                 Bank.setIntLoan(scanner.nextDouble() * 100);
                 System.out.println("changed successfully");
+                break;
 
             }
-            default -> {
+            default: {
                 System.out.println("invalid input");
             }
         }

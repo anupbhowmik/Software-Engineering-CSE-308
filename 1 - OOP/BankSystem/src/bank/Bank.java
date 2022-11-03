@@ -68,10 +68,10 @@ public class Bank {
         } else {
             Account newUser = null;
             switch (accountType){
-                case STUDENT ->  newUser = new StudentAcc(name, amount);
-                case SAVINGS ->  newUser = new SavingsAcc(name, amount);
-                case FIXED_DEPOSIT ->  newUser = new FDAcc(name, amount);
-                case LOAN ->  newUser = new LoanAcc(name, amount);
+                case STUDENT:  newUser = new StudentAcc(name, amount); break;
+                case SAVINGS:  newUser = new SavingsAcc(name, amount); break;
+                case FIXED_DEPOSIT:  newUser = new FDAcc(name, amount); break;
+                case LOAN :  newUser = new LoanAcc(name, amount); break;
             }
 
             if (newUser == null){

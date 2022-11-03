@@ -48,11 +48,12 @@ public class Main {
                             if (action == 5)
                                 break;
                             switch (action) {
-                                case 1 -> {
+                                case 1: {
                                     System.out.println("User info lookup:");
                                     currEmp.lookup();
+                                    break;
                                 }
-                                case 2 -> {
+                                case 2: {
                                     System.out.println("Loan Pending List:");
                                     if (currEmp.loanPendingList()) {
                                         System.out.print("Approve req for:");
@@ -64,15 +65,18 @@ public class Main {
                                             currEmp.approveLoan(name);
                                     } else
                                         System.out.println("No pending loans");
+                                    break;
 
                                 }
-                                case 3 -> {
+                                case 3: {
                                     System.out.println("Change interest rate:");
                                     currEmp.changeInterestRate();
+                                    break;
                                 }
-                                case 4 -> {
+                                case 4: {
                                     System.out.println("See Internal Fund:");
                                     currEmp.seeInternalFund();
+                                    break;
                                 }
 
                             }
@@ -112,13 +116,22 @@ public class Main {
                         ACCOUNT_TYPE acType;
                         System.out.println("Enter initial deposit: ");
                         double initAmount = userScanner.nextDouble();
-                        acType = switch (accType) {
-                            case 1 -> ACCOUNT_TYPE.SAVINGS;
-                            case 2 -> ACCOUNT_TYPE.STUDENT;
-                            case 3 -> ACCOUNT_TYPE.FIXED_DEPOSIT;
-                            case 4 -> ACCOUNT_TYPE.LOAN;
-                            default -> throw new IllegalStateException("Unexpected value: " + accType);
-                        };
+                        switch (accType) {
+                            case 1:
+                                acType = ACCOUNT_TYPE.SAVINGS;
+                                break;
+                            case 2:
+                                acType = ACCOUNT_TYPE.STUDENT;
+                                break;
+                            case 3:
+                                acType = ACCOUNT_TYPE.FIXED_DEPOSIT;
+                                break;
+                            case 4:
+                                acType = ACCOUNT_TYPE.LOAN;
+                                break;
+                            default:
+                                throw new IllegalStateException("Unexpected value: " + accType);
+                        }
 
                         bank.addUser(userName, acType, initAmount);
 
@@ -142,17 +155,17 @@ public class Main {
                             if (action == 5)
                                 break;
                             switch (action) {
-                                case 1 -> {
+                                case 1:
                                     System.out.print("Enter deposit:");
                                     double deposit = userScanner.nextDouble();
                                     currUser.deposit(deposit);
-                                }
-                                case 2 -> {
+                                    break;
+                                case 2:
                                     System.out.print("Enter withdraw amount:");
                                     double withdraw = userScanner.nextDouble();
                                     currUser.withdraw(withdraw);
-                                }
-                                case 3 -> {
+                                    break;
+                                case 3:
                                     if (currUser.isLoanReqPending()) {
                                         System.out.println("You already have a loan request pending.. wait for it to approve");
                                         System.out.println("Do you want additional 5% loan?" +
@@ -168,13 +181,11 @@ public class Main {
                                     }
                                     System.out.print("Enter loan amount:");
                                     double reqLoan = userScanner.nextDouble();
-
                                     currUser.reqLoan(reqLoan, false);
-                                }
-                                case 4 -> {
+                                    break;
+                                case 4:
                                     currUser.query();
-                                }
-
+                                    break;
                             }
                         }
 
